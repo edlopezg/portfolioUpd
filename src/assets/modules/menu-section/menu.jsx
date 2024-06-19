@@ -755,7 +755,7 @@ function App() {
     <Router>
         <Routes>
           <Route path="/contact" element={<ContactMeSection />} />
-          <Route path="/home" element={<MenuItems /> } />
+          <Route path="/" element={<MenuItems /> } />
         </Routes>
       </Router>
   </ThemeProvider>

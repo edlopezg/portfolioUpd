@@ -6,4 +6,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 export default defineConfig({
   plugins: [react()],
+  base: '/', // Asegúrate de ajustar esto según el directorio de despliegue
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+  },
 })

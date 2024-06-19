@@ -138,7 +138,7 @@ const ContactMeSection = () => {
           </CardContent>
           <Box sx={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'right' }}>
             <div>
-              <Link to='/home'>
+              <Link to='/'>
                 <IconButton
                   sx={{
                     backgroundColor: '#cfff00',
