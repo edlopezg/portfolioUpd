@@ -1,12 +1,12 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, Typography, TextField, Button, Box, Grid, IconButton } from '@mui/material';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
-import { BrowserRouter as  Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { ArrowBack } from '@mui/icons-material';
 import SendIcon from '@mui/icons-material/Send';
-import emailjs from 'emailjs-com';
+import emailjs from 'emailjs-com'; // Importar EmailJS
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css'; // Importar estilos de react-toastify
 
 const theme = createTheme({
   components: {
@@ -90,15 +90,20 @@ const ContactMeSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.send('service_0usebcf', 'template_jfbmnjs', formData, 'X4zZvND-QIUXzkTyO')
-      .then((result) => {
-        console.log(result.text);
-        toast.success('Message sent successfully!');
-        setFormData({ name: '', email: '', message: '' });
-      }, (error) => {
-        console.log(error.text);
-        toast.error('Failed to send message. Please try again later.');
-      });
+    emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      formData,
+      import.meta.env.VITE_EMAILJS_USER_ID
+    )
+    .then((result) => {
+      console.log(result.text);
+      toast.success('Message sent successfully!');
+      setFormData({ name: '', email: '', message: '' }); // Reset the form after successful submission
+    }, (error) => {
+      console.log(error.text);
+      toast.error('Failed to send message. Please try again later.');
+    });
   };
 
   return (
@@ -106,22 +111,22 @@ const ContactMeSection = () => {
       <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', bgcolor: '#808080', p: 2 }}>
         <Card sx={{ maxWidth: 900, width: '100%', p: 4, backgroundColor: 'rgba(0, 0, 0, 0.8)', backdropFilter: 'blur(10px)', borderWidth: '1px', borderStyle: 'solid', borderColor: 'gray', borderRadius: '15px' }}>
           <CardContent>
-            <Typography variant="tagContactMe" component="div" sx={{ mb: 2, color: 'white', textAlign: 'center', fontFamily: '"Montserrat", san-serif', fontSize:'2rem' }}>
+            <Typography variant="h5" component="div" sx={{ mb: 2, color: 'white', textAlign: 'center' }}>
               CONTACT ME
             </Typography>
             <form id='form' onSubmit={handleSubmit}>
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <Typography style={{ color: 'gray', marginBottom: '5px' }}>Name</Typography>
-                  <CustomTextField required name="name" type="text" fullWidth variant="outlined" value={formData.name} onChange={handleChange} />
+                  <CustomTextField name="name" type="text" fullWidth variant="outlined" value={formData.name} onChange={handleChange} />
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <Typography style={{ color: 'gray', marginBottom: '5px' }}>Email</Typography>
-                  <CustomTextField required name="email" fullWidth variant="outlined" value={formData.email} onChange={handleChange} />
+                  <CustomTextField name="email" fullWidth variant="outlined" value={formData.email} onChange={handleChange} />
                 </Grid>
                 <Grid item xs={12}>
                   <Typography style={{ color: 'gray', marginBottom: '5px' }}>Message</Typography>
-                  <CustomTextFieldMessage required name="message" multiline rows={6} fullWidth variant="outlined" value={formData.message} onChange={handleChange} />
+                  <CustomTextFieldMessage name="message" multiline rows={6} fullWidth variant="outlined" value={formData.message} onChange={handleChange} />
                 </Grid>
               </Grid>
               <Box sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}>
