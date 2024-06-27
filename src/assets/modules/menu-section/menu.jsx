@@ -309,7 +309,7 @@ const FullScreenSection = styled('section')(() => ({
   justifyContent: 'center',
   textAlign: 'center',
   position: 'relative',
-  background: `url('/images/grey-circuit-connection-on-black-background-vectornew.jpg') no-repeat center center fixed`,
+  background: 'black',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
