@@ -311,7 +311,7 @@ const FullScreenSection = styled('section')(() => ({
   justifyContent: 'center',
   textAlign: 'center',
   position: 'relative',
-  background: `url('/images/newFondo.png') no-repeat center center fixed`,
+  background: `url('/images/bggreen.avif') no-repeat center center fixed`,
   backgroundSize: 'cover',
 
 }));
