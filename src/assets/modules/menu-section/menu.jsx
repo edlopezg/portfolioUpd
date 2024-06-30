@@ -313,7 +313,7 @@ const FullScreenSection = styled('section')(() => ({
   position: 'relative',
   
   
-  background: 'radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(24,4,8,1) 55%) fixed',
+  background: 'radial-gradient(circle, rgba(123,126,142,1) 0%, rgba(24,4,8,1) 67%) fixed',
   backgroundSize: 'cover',
 
 }));
