@@ -311,12 +311,9 @@ const FullScreenSection = styled('section')(() => ({
   justifyContent: 'center',
   textAlign: 'center',
   position: 'relative',
-  background: `url('/images/FondoPage.png') no-repeat center center `,
-  backgroundAttachment: 'fixed',
+  background: `url('/images/FondoPage.png') no-repeat center center fixed`,
   backgroundSize: 'cover',
-  backgroundPosition: 'center',
-  backgroundRepeat: 'no-repeat',
-
+  '-webkit-background-size': 'cover',
   '@media (min-width: 768px)': {
     backgroundAttachment: 'scroll',
   }
