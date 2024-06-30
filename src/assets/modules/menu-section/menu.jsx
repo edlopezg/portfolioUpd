@@ -309,7 +309,7 @@ const FullScreenSection = styled('section')(() => ({
   justifyContent: 'center',
   textAlign: 'center',
   position: 'relative',
-  background: `url('/images/FondoPage.png') no-repeat center center fixed`,
+  backgroundImage: `url('/images/FondoPage.png') no-repeat center center fixed`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
