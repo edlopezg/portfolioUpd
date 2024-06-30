@@ -311,7 +311,9 @@ const FullScreenSection = styled('section')(() => ({
   justifyContent: 'center',
   textAlign: 'center',
   position: 'relative',
-  background: `url('/images/bggreen.avif') no-repeat center center fixed`,
+  
+  
+  background: 'radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(24,4,8,1) 55%) fixed',
   backgroundSize: 'cover',
 
 }));
