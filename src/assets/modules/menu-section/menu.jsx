@@ -517,7 +517,7 @@ function MenuItems() {
       <FullScreenSection id="inicio">
         <img src="/images/6f41a070-d03e-4b3c-a5ac-5767d89570d4.jpg" alt="Profile" className={classes.profileImage} />
         <Typography  variant="h5">Ed Jasser Lopez Guardado</Typography>
-        <Typography variant="body1">Web Developer, React.js Developer</Typography>
+        <Typography variant="body1">Frontend Developer, React.js Developer</Typography>
       </FullScreenSection>
 
       <FullScreenSection id="about-me" className={classes.section}>
