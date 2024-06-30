@@ -300,6 +300,8 @@ const Root = styled('div')(({ theme }) => ({
 
 }));
 
+
+
 const FullScreenSection = styled('section')(() => ({
   minHeight: '100vh',
   width: '100%',
@@ -309,7 +311,8 @@ const FullScreenSection = styled('section')(() => ({
   justifyContent: 'center',
   textAlign: 'center',
   position: 'relative',
-  background: `url('/images/FondoPage.png') no-repeat center center`,
+  background: `url('/images/FondoPage.png') no-repeat center center `,
+  backgroundAttachment: 'fixed',
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
