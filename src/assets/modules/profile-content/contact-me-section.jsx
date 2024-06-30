@@ -118,15 +118,15 @@ const ContactMeSection = () => {
               <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                   <Typography style={{ color: 'gray', marginBottom: '5px' }}>Name</Typography>
-                  <CustomTextField name="name" type="text" fullWidth variant="outlined" value={formData.name} onChange={handleChange} />
+                  <CustomTextField required name="name" type="text" fullWidth variant="outlined" value={formData.name} onChange={handleChange} />
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <Typography style={{ color: 'gray', marginBottom: '5px' }}>Email</Typography>
-                  <CustomTextField name="email" fullWidth variant="outlined" value={formData.email} onChange={handleChange} />
+                  <CustomTextField required name="email" fullWidth variant="outlined" value={formData.email} onChange={handleChange} />
                 </Grid>
                 <Grid item xs={12}>
                   <Typography style={{ color: 'gray', marginBottom: '5px' }}>Message</Typography>
-                  <CustomTextFieldMessage name="message" multiline rows={6} fullWidth variant="outlined" value={formData.message} onChange={handleChange} />
+                  <CustomTextFieldMessage required name="message" multiline rows={6} fullWidth variant="outlined" value={formData.message} onChange={handleChange} />
                 </Grid>
               </Grid>
               <Box sx={{ display: 'flex', justifyContent: 'center', mt: 6 }}>
