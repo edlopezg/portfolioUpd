@@ -309,10 +309,14 @@ const FullScreenSection = styled('section')(() => ({
   justifyContent: 'center',
   textAlign: 'center',
   position: 'relative',
-  backgroundImage: `url('/images/FondoPage.png') no-repeat center center fixed`,
+  background: `url('/images/FondoPage.png') no-repeat center center`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
+
+  '@media (min-width: 768px)': {
+    backgroundAttachment: 'scroll',
+  }
 }));
 
 const aboutMeData = [
