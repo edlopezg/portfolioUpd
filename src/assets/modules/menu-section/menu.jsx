@@ -275,6 +275,7 @@ const Root = styled('div')(({ theme }) => ({
     height: '200px', // Ajusta el tamaño según sea necesario
     borderRadius: '50%',
     animation: `${glow} 2s infinite linear`,
+    marginBottom:'70px',
     overflow: 'hidden', // Asegura que la sombra no se salga del contenedor
   },
   [`& .${classes.cardText}`]:{
@@ -308,7 +309,16 @@ const Root = styled('div')(({ theme }) => ({
 
 }));
 
-
+const BackgroundContainer = styled('div')(() => ({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  background: `url('/images/circuit_board_art-Creative_Design_Desktop_Wallpaper_1366x768.jpg') no-repeat center center`,
+  backgroundSize: 'cover',
+  zIndex: -1,
+}));
 
 const FullScreenSection = styled('section')(() => ({
   minHeight: '100vh',
@@ -319,10 +329,7 @@ const FullScreenSection = styled('section')(() => ({
   justifyContent: 'center',
   textAlign: 'center',
   position: 'relative',
-  background: `url('/images/circuit_board_art-Creative_Design_Desktop_Wallpaper_1366x768.jpg') no-repeat center center fixed`,
-  backgroundSize: 'cover',
-
-})); 
+}));
 
 const aboutMeData = [
  
@@ -480,6 +487,7 @@ function MenuItems() {
   return (
     
     <Root className={classes.root}>
+      <BackgroundContainer />
          <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           {isMobileView && (
@@ -537,7 +545,7 @@ function MenuItems() {
 
       <FullScreenSection id="inicio">
       <img src="/images/6f41a070-d03e-4b3c-a5ac-5767d89570d4.jpg" alt="Profile" className={classes.profileImage} />
-      <Typography variant="h5">Ed Jasser Lopez Guardado</Typography>
+      <Typography variant="h5" >Ed Jasser Lopez Guardado</Typography>
       <Typography variant="body1">Frontend Developer, React.js Developer</Typography>
     </FullScreenSection>
 
