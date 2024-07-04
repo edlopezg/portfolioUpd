@@ -309,13 +309,24 @@ const Root = styled('div')(({ theme }) => ({
 
 }));
 
-const BackgroundContainer = styled('div')(() => ({
+const BackgroundContainerFirst = styled('div')(() => ({
   position: 'absolute',
   top: 0,
   left: 0,
   width: '100%',
   height: '100%',
   background: `url('/images/circuit_board_art-Creative_Design_Desktop_Wallpaper_1366x768.jpg') no-repeat center center`,
+  backgroundSize: 'cover',
+  zIndex: -1,
+}));
+
+const BackgroundContainer = styled('div')(() => ({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  background: `linear-gradient(0deg, rgba(10,64,53,1) 43%, rgba(0,0,0,1) 82%); no-repeat center center`,
   backgroundSize: 'cover',
   zIndex: -1,
 }));
@@ -543,7 +554,7 @@ function MenuItems() {
       </Drawer>
 
       <FullScreenSection id="inicio">
-      <BackgroundContainer />
+      <BackgroundContainerFirst />
       <img src="/images/6f41a070-d03e-4b3c-a5ac-5767d89570d4.jpg" alt="Profile" className={classes.profileImage} />
       <Typography variant="h5" >Ed Jasser Lopez Guardado</Typography>
       <Typography variant="body1">Frontend Developer, React.js Developer</Typography>
