@@ -487,7 +487,6 @@ function MenuItems() {
   return (
     
     <Root className={classes.root}>
-      <BackgroundContainer />
          <AppBar position="fixed" className={classes.appBar}>
         <Toolbar className={classes.toolbar}>
           {isMobileView && (
@@ -544,12 +543,14 @@ function MenuItems() {
       </Drawer>
 
       <FullScreenSection id="inicio">
+      <BackgroundContainer />
       <img src="/images/6f41a070-d03e-4b3c-a5ac-5767d89570d4.jpg" alt="Profile" className={classes.profileImage} />
       <Typography variant="h5" >Ed Jasser Lopez Guardado</Typography>
       <Typography variant="body1">Frontend Developer, React.js Developer</Typography>
     </FullScreenSection>
 
       <FullScreenSection id="about-me" className={classes.section}>
+      <BackgroundContainer />
               <Typography variant="h5" style={{marginBottom:'80px'}}> Nice to meet you</Typography>
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
                 {aboutMeData.map((item, index) => (
@@ -577,6 +578,7 @@ function MenuItems() {
               </div>
             </FullScreenSection>
             <FullScreenSection id="education" className={classes.section}>
+            <BackgroundContainer />
   <Typography variant="h5" style={{ marginBottom: '80px' }}> Education</Typography>
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
     {educationData.map((item, index) => (
@@ -627,6 +629,7 @@ function MenuItems() {
 
 
       <FullScreenSection id="work-history" className={classes.section}>
+      <BackgroundContainer />
               <Typography variant="h5" style={{marginBottom:'80px'}}> Work History</Typography>
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
                 {workData.map((item, index) => (
