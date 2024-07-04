@@ -331,6 +331,18 @@ const BackgroundContainer = styled('div')(() => ({
   zIndex: -1,
 }));
 
+const BackgroundContainerSecond = styled('div')(() => ({
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  width: '100%',
+  height: '100%',
+  background: `linear-gradient(0deg, rgba(0,0,0,1) 43%, rgba(10,64,53,1) 82%); no-repeat center center`,
+  backgroundSize: 'cover',
+  zIndex: -1,
+}));
+
+
 const FullScreenSection = styled('section')(() => ({
   minHeight: '100vh',
   width: '100%',
@@ -589,7 +601,7 @@ function MenuItems() {
               </div>
             </FullScreenSection>
             <FullScreenSection id="education" className={classes.section}>
-            <BackgroundContainer />
+            <BackgroundContainerSecond />
   <Typography variant="h5" style={{ marginBottom: '80px' }}> Education</Typography>
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
     {educationData.map((item, index) => (
