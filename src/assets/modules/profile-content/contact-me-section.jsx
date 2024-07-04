@@ -108,7 +108,7 @@ const ContactMeSection = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', bgcolor: '#443B39', p: 2 }}>
+      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh', background: 'linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(10,64,53,1) 73%)', p: 2 }}>
         <Card sx={{ maxWidth: 900, width: '100%', p: 4, backgroundColor: 'rgba(0, 0, 0, 0.8)', backdropFilter: 'blur(10px)', borderWidth: '1px', borderStyle: 'solid', borderColor: 'gray', borderRadius: '15px' }}>
           <CardContent>
             <Typography variant="h5" component="div" sx={{ mb: 2, color: 'white', textAlign: 'center' }}>
