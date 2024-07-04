@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link,  } from 'react-router-dom';
 import { ArrowForward,GitHub, LinkedIn, LocationOn, } from '@mui/icons-material';
 import EmailIcon from '@mui/icons-material/Email';
-
 import PhoneIcon from '@mui/icons-material/Phone';
 import {
   AppBar,
@@ -20,6 +19,7 @@ import {
   ListItemText,
 } from '@mui/material';
 import { styled, createTheme, ThemeProvider, keyframes } from '@mui/material/styles';
+import style from 'styled-components';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MenuIcon from '@mui/icons-material/Menu';
 import ContactMeSection from '../profile-content/contact-me-section';
@@ -309,13 +309,29 @@ const Root = styled('div')(({ theme }) => ({
 
 }));
 
+const LineSeparator = style.div`
+  width: 60%; /* Ajusta esto según sea necesario */
+  height: 2px;
+  background: linear-gradient(to right, transparent, lightgray 25%, lightgray 75%, transparent);
+  margin: 20px auto; /* Centra horizontalmente */
+`;
+
+const SeparatorContainer = style.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0; /* Espacio vertical alrededor del separador */
+`;
+
+
 const BackgroundContainerFirst = styled('div')(() => ({
   position: 'absolute',
   top: 0,
   left: 0,
   width: '100%',
   height: '100%',
-  background: `url('/images/circuit_board_art-Creative_Design_Desktop_Wallpaper_1366x768.jpg') no-repeat center center`,
+  background: `url('/images/FondoPage.png') no-repeat center center`,
   backgroundSize: 'cover',
   zIndex: -1,
 }));
@@ -574,6 +590,9 @@ function MenuItems() {
 
       <FullScreenSection id="about-me" className={classes.section}>
       <BackgroundContainer />
+      <SeparatorContainer>
+      <LineSeparator />
+    </SeparatorContainer>
               <Typography variant="h5" style={{marginBottom:'80px'}}> Nice to meet you</Typography>
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
                 {aboutMeData.map((item, index) => (
@@ -602,6 +621,9 @@ function MenuItems() {
             </FullScreenSection>
             <FullScreenSection id="education" className={classes.section}>
             <BackgroundContainerSecond />
+            <SeparatorContainer>
+      <LineSeparator />
+    </SeparatorContainer>
   <Typography variant="h5" style={{ marginBottom: '80px' }}> Education</Typography>
   <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
     {educationData.map((item, index) => (
@@ -653,6 +675,9 @@ function MenuItems() {
 
       <FullScreenSection id="work-history" className={classes.section}>
       <BackgroundContainer />
+      <SeparatorContainer>
+      <LineSeparator />
+    </SeparatorContainer>
               <Typography variant="h5" style={{marginBottom:'80px'}}> Work History</Typography>
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
                 {workData.map((item, index) => (
@@ -698,6 +723,9 @@ function MenuItems() {
               p: 2,
                  }}
     >
+        <SeparatorContainer>
+      <LineSeparator />
+    </SeparatorContainer>
       <Box sx={{ textAlign: 'center', my: 2, position: 'relative' }}>
         <Typography variant= "tagContactMe"   sx={{ display: 'inline-block', position: 'relative', color:'white', }}>
           Contact Me
