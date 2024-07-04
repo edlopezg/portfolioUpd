@@ -331,7 +331,10 @@ const BackgroundContainerFirst = styled('div')(() => ({
   left: 0,
   width: '100%',
   height: '100%',
-  background: `url('/images/FondoPage.png') no-repeat center center`,
+  background: `
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.9) 100%),
+    url('/images/FondoPage.png') no-repeat center center
+  `,
   backgroundSize: 'cover',
   zIndex: -1,
 }));
