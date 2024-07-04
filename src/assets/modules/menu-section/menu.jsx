@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link,  } from 'react-router-dom';
 import { ArrowForward,GitHub, LinkedIn, LocationOn, } from '@mui/icons-material';
 import EmailIcon from '@mui/icons-material/Email';
+
 import PhoneIcon from '@mui/icons-material/Phone';
 import {
   AppBar,
@@ -18,7 +19,7 @@ import {
   ListItem,
   ListItemText,
 } from '@mui/material';
-import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
+import { styled, createTheme, ThemeProvider, keyframes } from '@mui/material/styles';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MenuIcon from '@mui/icons-material/Menu';
 import ContactMeSection from '../profile-content/contact-me-section';
@@ -269,6 +270,13 @@ const Root = styled('div')(({ theme }) => ({
     left: 0,
     zIndex: 1,
   },
+  [`& .${classes.profileImage}`] : {
+    width: '200px', // Ajusta el tamaño según sea necesario
+    height: '200px', // Ajusta el tamaño según sea necesario
+    borderRadius: '50%',
+    animation: `${glow} 2s infinite linear`,
+    overflow: 'hidden', // Asegura que la sombra no se salga del contenedor
+  },
   [`& .${classes.cardText}`]:{
     width: '100%',
     height: '100%',
@@ -311,12 +319,10 @@ const FullScreenSection = styled('section')(() => ({
   justifyContent: 'center',
   textAlign: 'center',
   position: 'relative',
-  
-  
-  background: 'radial-gradient(circle, rgba(123,126,142,1) 0%, rgba(24,4,8,1) 67%) fixed',
+  background: `url('/images/circuit_board_art-Creative_Design_Desktop_Wallpaper_1366x768.jpg') no-repeat center center fixed`,
   backgroundSize: 'cover',
 
-}));
+})); 
 
 const aboutMeData = [
  
@@ -397,10 +403,25 @@ const educationData = [
     image:"/images/images.jpg" 
     
   }
-
-  
-  
 ];
+
+const glow = keyframes`
+  0% {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5), 
+                0 0 40px 20px rgba(255, 255, 255, 0.5), 
+                0 0 60px 30px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 1), 
+                0 0 40px 20px rgba(255, 255, 255, 1), 
+                0 0 60px 30px rgba(255, 255, 255, 1);
+  }
+  100% {
+    box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.5), 
+                0 0 40px 20px rgba(255, 255, 255, 0.5), 
+                0 0 60px 30px rgba(255, 255, 255, 0.5);
+  }
+`;
 
 
 function MenuItems() {
@@ -515,10 +536,10 @@ function MenuItems() {
       </Drawer>
 
       <FullScreenSection id="inicio">
-        <img src="/images/6f41a070-d03e-4b3c-a5ac-5767d89570d4.jpg" alt="Profile" className={classes.profileImage} />
-        <Typography  variant="h5">Ed Jasser Lopez Guardado</Typography>
-        <Typography variant="body1">Frontend Developer, React.js Developer</Typography>
-      </FullScreenSection>
+      <img src="/images/6f41a070-d03e-4b3c-a5ac-5767d89570d4.jpg" alt="Profile" className={classes.profileImage} />
+      <Typography variant="h5">Ed Jasser Lopez Guardado</Typography>
+      <Typography variant="body1">Frontend Developer, React.js Developer</Typography>
+    </FullScreenSection>
 
       <FullScreenSection id="about-me" className={classes.section}>
               <Typography variant="h5" style={{marginBottom:'80px'}}> Nice to meet you</Typography>
