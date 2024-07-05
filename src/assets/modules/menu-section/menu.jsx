@@ -607,7 +607,7 @@ function MenuItems() {
       <img src="/images/6f41a070-d03e-4b3c-a5ac-5767d89570d4.jpg" alt="Profile" className={classes.profileImage} />
       <Typography variant="h5" >Ed Jasser Lopez Guardado</Typography>
       <Typography variant="body1">Frontend Developer, React.js Developer</Typography>
-      <a style={{marginTop:'90px'}} href="/documents/CVEdEsp.pdf" download>
+      <a style={{marginTop:'80px'}} href="/documents/CVEdEsp.pdf" download>
       <DownloadButton>Download Spanish CV</DownloadButton>
       </a>
       <a style={{marginTop:'10px'}} href="/documents/CVEdEng.pdf" download>
