@@ -143,6 +143,7 @@ const Root = styled('div')(({ theme }) => ({
   [`& .${classes.iconButton}`]: {
     color: 'white',
     fontSize: '32px',
+    marginRight:'60px'
   },
   [`& .${classes.aboutMeTitle}`]: {
     fontSize: '2rem', // Ajusta el tamaño del título
@@ -582,26 +583,55 @@ function MenuItems() {
 
       {/* Drawer for mobile view */}
       <Drawer
-          style={{
-            backgroundColor: 'rgba(255, 255, 255, 0.1)', // Color de fondo semi-transparente
-            backdropFilter: 'blur(10px)', // Efecto de desenfoque
+  style={{
+    backgroundColor: 'rgba(255, 255, 255, 0.1)', // Color de fondo semi-transparente
+    backdropFilter: 'blur(10px)', // Efecto de desenfoque
+    borderRadius: '10px',
+    height: '100vh', // Asegurarse de que ocupe toda la altura de la pantalla
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }}
+  anchor="top"
+  open={drawerOpen}
+  onClose={() => setDrawerOpen(false)}
+  classes={{ paper: classes.drawerPaper }}
+>
+  <List
+    sx={{
+      width: '100%',
+      maxWidth: 'none',
+      bgcolor: 'black',
+      height: 'auto',
+      display: 'flex',
+      flexDirection: 'column', // Alinea los elementos en columna
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginTop: '50px', // Añadir margen superior para que todas las opciones sean visibles
+      paddingBottom: '20px', // Añadir margen inferior para darle espacio al último elemento
+    }}
+  >
+    {['About me', 'Education', 'Work history', 'Contact me'].map((text, index) => (
+      <ListItem
+        sx={{
+          '&:hover': {
+            bgcolor: 'rgba(255, 255, 255, 0.1)',
+            cursor: 'pointer',
             borderRadius: '10px',
-            height: '100%'
-          }}
-        anchor="left"
-        open={drawerOpen}
-        onClose={() => setDrawerOpen(false)}
-        classes={{ paper: classes.drawerPaper }}
+          },
+          my: 2, // Margen vertical para espaciar los elementos
+          width: 'auto', // Ajusta el ancho de los items
+          justifyContent: 'center', // Centra los items
+        }}
+        button
+        key={text}
+        onClick={() => handleTabChange(null, index)}
       >
-        <List sx={{ width: '110%', maxWidth: 380, bgcolor: 'black' , height: '100%', borderRadius: '10px', paddingTop: '100px'}}>
-          {['About me', 'Education', 'Work history', 'Contact me'].map((text, index) => (
-            <ListItem sx={{ '&:hover': { bgcolor: 'rgba(255, 255, 255, 0.1)', cursor: 'pointer' , borderRadius: '10px',} }}
-                      button key={text} onClick={() => handleTabChange(null, index)}>
-              <ListItemText primary={text}  />
-            </ListItem>
-          ))}
-        </List>
-      </Drawer>
+        <ListItemText primary={text} sx={{ textAlign: 'center', color: 'white' }} />
+      </ListItem>
+    ))}
+  </List>
+</Drawer>
 
       <FullScreenSection id="inicio">
       <BackgroundContainerFirst />
