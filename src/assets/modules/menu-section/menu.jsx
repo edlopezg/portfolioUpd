@@ -377,6 +377,7 @@ const FullScreenSection = styled('section')(() => ({
 const DownloadButton = estilo.button`
  
 padding: 20px 50px;
+font-family: "Montserrat", san-serif;
 font-size: 16px;
 background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
 border: none;
@@ -676,9 +677,9 @@ function MenuItems() {
             }} 
           />
          
-            <Typography style={{marginTop:'40px'}} variant="h6">{item.title}</Typography>
-            <Typography variant="body2">{item.institution}</Typography>
-            <Typography variant="body2">{item.date}</Typography>
+            <Typography style={{marginTop:'40px', fontFamily: '"Montserrat", san-serif'}} variant="h6">{item.title}</Typography>
+            <Typography variant="body2" style={{fontFamily: '"Montserrat", san-serif'}}>{item.institution}</Typography>
+            <Typography variant="body2" style={{fontFamily: '"Montserrat", san-serif'}}>{item.date}</Typography>
             
           
         </CardContent>
@@ -708,7 +709,7 @@ function MenuItems() {
       <SeparatorContainer>
       <LineSeparator />
     </SeparatorContainer>
-              <Typography variant="h5" style={{marginBottom:'80px'}}> Work History</Typography>
+              <Typography variant="h5" style={{marginBottom:'80px' }}> Work History</Typography>
               <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
                 {workData.map((item, index) => (
                   
@@ -723,12 +724,13 @@ function MenuItems() {
                   >
                     <CardContent  >
                     <img src={item.image} alt={item.title} style={{ width: '100px', height: '100px', marginBottom: '10px', borderRadius:'20px' }} />
-                      <Typography variant="h6">{item.title}</Typography>
-                      <Typography variant="body2">{item.dateWork}</Typography>
+                      <Typography variant="h6" style={{fontFamily: '"Montserrat", san-serif'}}>{item.title}</Typography>
+                      <Typography variant="body2" style={{fontFamily: '"Montserrat", san-serif'}}>{item.dateWork}</Typography>
                       <Typography variant="body2" style={{ textAlign: 'justify', 
                                                            marginTop:'25px', 
                                                            marginBottom:'25px',
                                                            fontSize:'1.2rem',
+                                                           fontFamily: '"Montserrat", san-serif',
                                                            
                                                            }}>{item.description}</Typography>
                     </CardContent>
@@ -736,10 +738,7 @@ function MenuItems() {
                   
                 ))}
               </div>
-            </FullScreenSection>
-            
-            {/* ----------- ESTAMOS TRABAJANDO EN ESTA SECCION ---------- */}
-
+                      </FullScreenSection>
             
             <Box
                id="contact-me"
