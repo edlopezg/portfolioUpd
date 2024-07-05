@@ -18,8 +18,9 @@ import {
   ListItem,
   ListItemText,
 } from '@mui/material';
-import { styled, createTheme, ThemeProvider, keyframes } from '@mui/material/styles';
+import { styled, createTheme, ThemeProvider, keyframes,} from '@mui/material/styles';
 import style from 'styled-components';
+import estilo from 'styled-components';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import MenuIcon from '@mui/icons-material/Menu';
 import ContactMeSection from '../profile-content/contact-me-section';
@@ -319,7 +320,7 @@ const LineSeparator = style.div`
 const SeparatorContainer = style.div`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; 
   width: 100%;
   margin: 20px 0; /* Espacio vertical alrededor del separador */
 `;
@@ -372,6 +373,23 @@ const FullScreenSection = styled('section')(() => ({
   textAlign: 'center',
   position: 'relative',
 }));
+
+const DownloadButton = estilo.button`
+ 
+padding: 20px 50px;
+font-size: 16px;
+background: rgba(255, 255, 255, 0.2); /* Fondo semitransparente */
+border: none;
+border-radius: 90px;
+cursor: pointer;
+color: white;
+backdrop-filter: blur(10px); /* Efecto de desenfoque */
+-webkit-backdrop-filter: blur(10px); /* Para Safari */
+transition: background 0.3s ease;
+&:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+`;
 
 const aboutMeData = [
  
@@ -589,6 +607,12 @@ function MenuItems() {
       <img src="/images/6f41a070-d03e-4b3c-a5ac-5767d89570d4.jpg" alt="Profile" className={classes.profileImage} />
       <Typography variant="h5" >Ed Jasser Lopez Guardado</Typography>
       <Typography variant="body1">Frontend Developer, React.js Developer</Typography>
+      <a style={{marginTop:'90px'}} href="/documents/CVEdEsp.pdf" download>
+      <DownloadButton>Download Spanish CV</DownloadButton>
+      </a>
+      <a style={{marginTop:'10px'}} href="/documents/CVEdEng.pdf" download>
+      <DownloadButton>Download English CV</DownloadButton>
+      </a>
     </FullScreenSection>
 
       <FullScreenSection id="about-me" className={classes.section}>
