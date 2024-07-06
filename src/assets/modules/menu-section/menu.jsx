@@ -2,8 +2,12 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link,  } from 'react-router-dom';
 import { ArrowForward,GitHub, LinkedIn, LocationOn, } from '@mui/icons-material';
 import EmailIcon from '@mui/icons-material/Email';
-import PhoneIcon from '@mui/icons-material/Phone';
+import PhoneIcon from '@mui/icons-material/Phone'; 
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
   AppBar,
   Toolbar,
   Grid,
@@ -184,7 +188,7 @@ const Root = styled('div')(({ theme }) => ({
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
     transition: 'transform 0.3s',
     '&:hover': {
-      transform: 'scale(1.05)',
+      transform: 'scale(1.01)',
     },
   },
   [`& .${classes.aboutMeCardNew}`]: {
@@ -310,6 +314,7 @@ const Root = styled('div')(({ theme }) => ({
   },
 
 }));
+
 
 const LineSeparator = style.div`
   width: 60%; /* Ajusta esto según sea necesario */
@@ -734,41 +739,45 @@ function MenuItems() {
 </FullScreenSection>
 
 
-      <FullScreenSection id="work-history" className={classes.section}>
-      <BackgroundContainer />
-      <SeparatorContainer>
-      <LineSeparator />
-    </SeparatorContainer>
-              <Typography variant="h5" style={{marginBottom:'80px' }}> Work History</Typography>
-              <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center' }}>
-                {workData.map((item, index) => (
-                  
-                  <Card
-                    key={index}
-                    className={classes.educationCard}
-                    onMouseEnter={() => handleMouseEnter(index)}
-                    onMouseLeave={handleMouseLeave}
-                     style={{
-                      transform: hoveredCard === index ? 'scale(1.05)' : 'scale(1)',
-                     }}
-                  >
-                    <CardContent  >
-                    <img src={item.image} alt={item.title} style={{ width: '100px', height: '100px', marginBottom: '10px', borderRadius:'20px' }} />
-                      <Typography variant="h6" style={{fontFamily: '"Montserrat", san-serif'}}>{item.title}</Typography>
-                      <Typography variant="body2" style={{fontFamily: '"Montserrat", san-serif'}}>{item.dateWork}</Typography>
-                      <Typography variant="body2" style={{ textAlign: 'justify', 
-                                                           marginTop:'25px', 
-                                                           marginBottom:'25px',
-                                                           fontSize:'1.2rem',
-                                                           fontFamily: '"Montserrat", san-serif',
-                                                           
-                                                           }}>{item.description}</Typography>
-                    </CardContent>
-                  </Card>
-                  
-                ))}
-              </div>
-                      </FullScreenSection>
+<FullScreenSection id="work-history" className={classes.section}>
+  <BackgroundContainer />
+  <SeparatorContainer>
+    <LineSeparator />
+  </SeparatorContainer>
+  <Typography variant="h5" style={{ marginBottom: '80px'}}> Work History</Typography>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    {workData.map((item, index) => (
+      <Accordion key={index} className={classes.educationCard}>
+        <AccordionSummary
+          expandIcon={<ExpandMoreIcon />}
+          aria-controls={`panel${index}-content`}
+          id={`panel${index}-header`}
+          onMouseEnter={() => handleMouseEnter(index)}
+          onMouseLeave={handleMouseLeave}
+          style={{
+            transform: hoveredCard === index ? 'scale(1)' : 'scale(1)',
+          }}
+        >
+         <strong style={{fontFamily: '"Montserrat", san-serif', fontSize:'1.5rem'}}>{item.title}</strong> 
+        </AccordionSummary>
+        <AccordionDetails>
+          <CardContent>
+            <img src={item.image} alt={item.title} style={{ width: '100px', height: '100px', marginBottom: '10px', borderRadius: '80px' }} />
+            <Typography variant="body2" style={{ fontFamily: '"Montserrat", san-serif' }}>{item.dateWork}</Typography>
+            <Typography variant="body2" style={{
+              textAlign: 'justify',
+              marginTop: '25px',
+              marginBottom: '25px',
+              fontSize: '1.2rem',
+              fontFamily: '"Montserrat", san-serif',
+            }}>{item.description}</Typography>
+          </CardContent>
+        </AccordionDetails>
+      </Accordion>
+    ))}
+  </div>
+</FullScreenSection>
+                      
             
             <Box
                id="contact-me"
