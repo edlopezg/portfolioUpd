@@ -747,7 +747,7 @@ function MenuItems() {
   <Typography variant="h5" style={{ marginBottom: '80px'}}> Work History</Typography>
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
     {workData.map((item, index) => (
-      <Accordion key={index} className={classes.educationCard}>
+      <Accordion key={index} className={classes.educationCard} style={{marginBottom:'45px'}} >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls={`panel${index}-content`}
@@ -762,7 +762,7 @@ function MenuItems() {
         </AccordionSummary>
         <AccordionDetails>
           <CardContent>
-            <img src={item.image} alt={item.title} style={{ width: '100px', height: '100px', marginBottom: '10px', borderRadius: '80px' }} />
+            <img src={item.image} alt={item.title} style={{ width: '100px', height: '100px', marginBottom: '10px', borderRadius: '30px' }} />
             <Typography variant="body2" style={{ fontFamily: '"Montserrat", san-serif' }}>{item.dateWork}</Typography>
             <Typography variant="body2" style={{
               textAlign: 'justify',
