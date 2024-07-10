@@ -182,7 +182,7 @@ const Root = styled('div')(({ theme }) => ({
     borderRadius: '35px',
     color:'white',
     padding: theme.spacing(2),
-    width: '90%',
+    width: '50%',
     margin: theme.spacing(2),
     textAlign: 'center',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
