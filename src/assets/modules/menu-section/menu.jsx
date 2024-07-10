@@ -182,7 +182,7 @@ const Root = styled('div')(({ theme }) => ({
     borderRadius: '35px',
     color:'white',
     padding: theme.spacing(2),
-    width: '50%',
+    width: '70%',
     margin: theme.spacing(2),
     textAlign: 'center',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -758,10 +758,10 @@ function MenuItems() {
             transform: hoveredCard === index ? 'scale(1)' : 'scale(1)',
           }}
         >
-         <strong style={{fontFamily: '"Montserrat", san-serif', fontSize:'1.5rem'}}>{item.title}</strong> 
+         <strong style={{fontFamily: '"Montserrat", san-serif', fontSize:'1.3rem', }}>{item.title}</strong> 
         </AccordionSummary>
         <AccordionDetails>
-          <CardContent>
+          <CardContent >
             <img src={item.image} alt={item.title} style={{ width: '100px', height: '100px', marginBottom: '10px', borderRadius: '30px' }} />
             <Typography variant="body2" style={{ fontFamily: '"Montserrat", san-serif' }}>{item.dateWork}</Typography>
             <Typography variant="body2" style={{
