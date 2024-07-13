@@ -179,10 +179,10 @@ const Root = styled('div')(({ theme }) => ({
     
     backgroundColor: 'rgba(192,192,192,0.3)',
     backdropFilter: 'blur(10px)',
-    borderRadius: '35px',
+    borderRadius: '10px',
     color:'white',
     padding: theme.spacing(2),
-    width: '70%',
+    width: '80%',
     margin: theme.spacing(2),
     textAlign: 'center',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -747,7 +747,7 @@ function MenuItems() {
   <Typography variant="h5" style={{ marginBottom: '80px'}}> Work History</Typography>
   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
     {workData.map((item, index) => (
-      <Accordion key={index} className={classes.educationCard} style={{marginBottom:'45px'}} >
+      <Accordion key={index} className={classes.educationCard} style={{marginBottom:'10px'}} >
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls={`panel${index}-content`}
