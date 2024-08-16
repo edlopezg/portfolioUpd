@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Typography from '@mui/material/Typography';
 import Slider from "react-slick";
 import styled from 'styled-components';
@@ -34,7 +34,7 @@ const useStyles = {
 };
 
 // Datos de ejemplo
-const workData = [
+const projectsData = [
   {
     title: "Proyecto1",
     image: "/images/weather-project.png",
@@ -69,7 +69,7 @@ function MyProjects() {
     slidesToShow: 2,
     speed: 500,
     infinite: true,
-    arrows: true,
+    arrows: false, // Activar las flechas
     dots: true,
     responsive: [
       {
@@ -80,15 +80,34 @@ function MyProjects() {
         },
       },
     ],
+    appendDots: dots => (
+      <div
+        style={{
+          bottom: '-55px',
+        }}
+      >
+        <ul style={{ margin: "0px" }}> {dots} </ul>
+      </div>
+    ),
+    customPaging: () => (
+      <div
+        style={{
+          width: "10px",
+          height: "10px",
+          borderRadius: "50%",
+          backgroundColor: "white",
+        }}
+      ></div>
+    ),
   };
 
   return (
     <Container style={useStyles.section}>
       <LineSeparator />
       <Typography variant="h5" style={{ marginBottom: '90px', color: 'white' }}>Personal Projects</Typography>
-      <Slider {...settings}>
-        {Array.isArray(workData) && workData.length > 0 ? (
-          workData.map((item, index) => (
+      <Slider {...settings} className="custom-slick-slider">
+        {Array.isArray(projectsData) && projectsData.length > 0 ? (
+          projectsData.map((item, index) => (
             <div key={index} style={{ padding: '0 10px' }}>
               <div
                 style={{
