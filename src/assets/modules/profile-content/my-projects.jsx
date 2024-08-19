@@ -59,6 +59,7 @@ const projectsData = [
 
 function MyProjects() {
   const [hoveredCard, setHoveredCard] = useState(null);
+  const [activeSlide, setActiveSlide] = useState(0);
 
   const handleMouseEnter = (index) => setHoveredCard(index);
   const handleMouseLeave = () => setHoveredCard(null);
@@ -71,6 +72,7 @@ function MyProjects() {
     infinite: true,
     arrows: false, // Activar las flechas
     dots: true,
+    afterChange: current => setActiveSlide(current),
     responsive: [
       {
         breakpoint: 768,
@@ -89,13 +91,13 @@ function MyProjects() {
         <ul style={{ margin: "0px" }}> {dots} </ul>
       </div>
     ),
-    customPaging: () => (
+    customPaging: index => (
       <div
         style={{
           width: "10px",
           height: "10px",
           borderRadius: "50%",
-          backgroundColor: "white",
+          backgroundColor: index === activeSlide ? "gray" : "white",
         }}
       ></div>
     ),
