@@ -653,7 +653,7 @@ function MenuItems() {
       <a style={{marginTop:'80px'}} href="/documents/CVEdEsp.pdf" download>
       <DownloadButton>Download Spanish CV</DownloadButton>
       </a>
-      <a style={{marginTop:'10px'}} href="/documents/CVEdEng.pdf" download>
+      <a style={{marginTop:'10px'}} href="/documents/CV-Ed-eng.pdf" download>
       <DownloadButton>Download English CV</DownloadButton>
       </a>
     </FullScreenSection>
@@ -878,7 +878,7 @@ function MenuItems() {
           </Box>
           <Box display="flex" alignItems="center" mb={2}>
             <PhoneIcon sx={{ color: 'white' }} />
-            <Typography color="white" ml={0.5}>+52 315 114 6409</Typography>
+            <Typography color="white" ml={0.5}>+52 312 195 6683</Typography>
           </Box>
         </Grid>
       </Grid>
