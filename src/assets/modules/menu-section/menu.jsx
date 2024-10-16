@@ -412,31 +412,12 @@ const aboutMeData = [
 ]
 
 const workData = [
- 
+   
   {
-    title: 'INFORMATIC TEACHER (CECATI)',
-    description: 'In my time as an instructor I had the opportunity to teach a variety of fundamental topics in computing, including systems, hardware, and software. My goal was to provide actionable understanding and also allow them to develop their project creation and problem-solving skills',
-    image: '/images/cecati.png',
-    dateWork:'2018 - 2019'
-  },
-  
-  {
-    title: 'WEB DEVELOPMENT (FREELANCER) - LOCAL LAUNDRY',
-    description: 'In this professional stage I dedicated myself to carrying out projects independently that would help me understand and reinforce my knowledge in the field of web development, creating a landing page for a local business, on this occasion it was a simple development implementing a frontend stack, CSS, HTML and JS.',
-    image: '/images/laundrylogo.jpg',
-    dateWork:'2019 - 2020'
-  },
-  {
-    title: 'HIDROSOLUCIONES COLIMA (FREELANCER)',
-    description: 'At this stage of my professional development, my main responsibilities were to develop, maintain and update local client websites. The stack used for this work was HTML, CSS, BOOTSTRAP, WORDPRESS and JS. In this case the development was for a company from Colima called Hidrosoluciones Colima',
-    image: '/images/hidrosoluciones.jpg',
-    dateWork:'2019 - 2020'
-  },
-  {
-    title: 'WEB DEVELOPMENT (FREELANCER) - NISSAN DAOSA GDL',
-    description: 'I continued with autonomous development but taking it to the next level, achieving larger projects with new challenges. Using the same stack for build more robust applications, collaborating with a team to whom I reported progress. I started using more advanced resources, such as catalogs, data packages, and consuming client APIs, which was crucial to strengthening my skills.',
-    image: '/images/nissanlogo.jpg',
-    dateWork:'2021 - 2022'
+    title: 'REACT DEVELOPER - METLIFE',
+    description: 'During this phase, my responsibilities included: - Developing complete components and services using TypeScript, React.js, MUI, as well as other packages and libraries. - Implementing solutions and improvements to the code of existing services and components in the application. - Establishing connectivity with microservices and backend APIs. - Performing tasks related to compilation, deployment, and version control system, utilizing GIT and AzDo.',
+    image: '/images/metlifelogo.jpg',
+    dateWork:'2023 - 2024'
   },
   {
     title: 'ASST SYSTEM ENGINEER - TATA CONSULTANCY SERVICES',
@@ -445,12 +426,34 @@ const workData = [
     dateWork:'2022 - 2023'
   },
   {
-    title: 'REACT DEVELOPER - METLIFE',
-    description: 'During this phase, my responsibilities included: - Developing complete components and services using TypeScript, React.js, MUI, as well as other packages and libraries. - Implementing solutions and improvements to the code of existing services and components in the application. - Establishing connectivity with microservices and backend APIs. - Performing tasks related to compilation, deployment, and version control system, utilizing GIT and AzDo.',
-    image: '/images/metlifelogo.jpg',
-    dateWork:'2023 - 2024'
+    title: 'WEB DEVELOPMENT (FREELANCER) - NISSAN DAOSA GDL',
+    description: 'I continued with autonomous development but taking it to the next level, achieving larger projects with new challenges. Using the same stack for build more robust applications, collaborating with a team to whom I reported progress. I started using more advanced resources, such as catalogs, data packages, and consuming client APIs, which was crucial to strengthening my skills.',
+    image: '/images/nissanlogo.jpg',
+    dateWork:'2021 - 2022'
+  },
+  {
+    title: 'HIDROSOLUCIONES COLIMA (FREELANCER)',
+    description: 'At this stage of my professional development, my main responsibilities were to develop, maintain and update local client websites. The stack used for this work was HTML, CSS, BOOTSTRAP, WORDPRESS and JS. In this case the development was for a company from Colima called Hidrosoluciones Colima',
+    image: '/images/hidrosoluciones.jpg',
+    dateWork:'2019 - 2020'
+  },
+  {
+    title: 'WEB DEVELOPMENT (FREELANCER) - LOCAL LAUNDRY',
+    description: 'In this professional stage I dedicated myself to carrying out projects independently that would help me understand and reinforce my knowledge in the field of web development, creating a landing page for a local business, on this occasion it was a simple development implementing a frontend stack, CSS, HTML and JS.',
+    image: '/images/laundrylogo.jpg',
+    dateWork:'2019 - 2020'
+  },
+  {
+    title: 'INFORMATIC TEACHER (CECATI)',
+    description: 'In my time as an instructor I had the opportunity to teach a variety of fundamental topics in computing, including systems, hardware, and software. My goal was to provide actionable understanding and also allow them to develop their project creation and problem-solving skills',
+    image: '/images/cecati.png',
+    dateWork:'2018 - 2019'
   },
 ]
+  
+  
+  
+  
 
 const educationData = [
  
