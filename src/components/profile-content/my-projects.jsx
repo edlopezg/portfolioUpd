@@ -54,6 +54,10 @@ const projectsData = [
     tittle : 'Proyecto5',
     image :'/images/userappcomplete.jpg',
     link:'https://apprandomusers.netlify.app/',
+  },
+  {
+    tittle : 'Proyecto6',
+    image :'/images/pageTennis.jpg',
   }
 ];
 
