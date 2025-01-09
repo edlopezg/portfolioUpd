@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link,  } from 'react-router-dom';
 import { ArrowForward,GitHub, LinkedIn, LocationOn, } from '@mui/icons-material';
 import EmailIcon from '@mui/icons-material/Email';
@@ -514,8 +514,6 @@ function MenuItems() {
     }
   };
 
-  
-
     const [hoveredCard, setHoverCard] = useState(null);
 
     const handleMouseEnter = (index) => {
@@ -556,6 +554,22 @@ function MenuItems() {
   const toggleDrawer = () => {
     setDrawerOpen(!drawerOpen);
   };
+
+    const text = '<Ed Jasser Lopez Guardado/>';
+    const [displayedText, setDisplayedText] = useState (" ");
+    const [index, setIndex] = useState(0);
+
+    useEffect(() => {
+      // Configura el intervalo para agregar una letra en cada ciclo
+      if (index < text.length) {
+        const intervalId = setInterval(() => {
+          setDisplayedText((prev) => prev + text[index]);
+          setIndex((prev) => prev + 1);
+        }, 90);
+        return () => clearInterval(intervalId);
+    }
+  }, [index, text]);
+
 
   
 
@@ -651,7 +665,7 @@ function MenuItems() {
       <FullScreenSection id="inicio">
       <BackgroundContainerFirst />
       <img src="/images/6f41a070-d03e-4b3c-a5ac-5767d89570d4.jpg" alt="Profile" className={classes.profileImage} />
-      <Typography variant="h5" >Ed Jasser Lopez Guardado</Typography>
+      <Typography variant="h5" >{displayedText}</Typography>
       <Typography variant="body1">Frontend Developer, React.js Developer</Typography>
       <a style={{marginTop:'80px'}} href="/documents/CVEdEsp.pdf" download>
       <DownloadButton>Download Spanish CV</DownloadButton>
