@@ -35,6 +35,7 @@ export default function Projects() {
                   <span className="project-arrow">↗</span>
                 </div>
                 <div className="project-body">
+                  <span className="project-index">{String(i + 1).padStart(2, "0")}</span>
                   <h3 className="project-title">{project.title}</h3>
                   <p className="project-desc">{project.description}</p>
                   <span className="project-link">{p.visit}</span>

@@ -129,3 +129,113 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* ---------- Mobile: card only, no cover image ---------- */
+.project-index {
+  display: none;
+}
+
+@media (max-width: 639px) {
+  .project-image-wrap {
+    display: none;
+  }
+
+  .project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    padding: 18px 18px 16px;
+    background:
+      radial-gradient(120% 90% at 100% 0%, var(--accent-dim), transparent 55%),
+      var(--surface);
+    border: 1px solid var(--border-strong);
+  }
+
+  /* accent bar on the left edge */
+  .project-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(180deg, var(--accent), transparent);
+  }
+
+  /* subtle animated sheen */
+  .project-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      110deg,
+      transparent 42%,
+      rgba(255, 107, 74, 0.1) 50%,
+      transparent 58%
+    );
+    transform: translateX(-110%);
+    animation: projectSheen 5s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  @keyframes projectSheen {
+    0%, 62% { transform: translateX(-110%); }
+    100% { transform: translateX(110%); }
+  }
+
+  .project-index {
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 14px;
+    font-family: var(--font-display);
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.14;
+    pointer-events: none;
+  }
+
+  .project-body {
+    padding: 0;
+    gap: 6px;
+  }
+
+  .project-title {
+    font-size: 16.5px;
+    padding-right: 52px;
+  }
+
+  .project-desc {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 6px;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-radius: 999px;
+    border: 1px solid var(--border-strong);
+    background: var(--bg);
+    font-size: 12.5px;
+    opacity: 1;
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.2s ease;
+  }
+
+  .project-card:active .project-link {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    transform: scale(0.97);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .project-card::after {
+      animation: none;
+    }
+  }
+}
