@@ -1,0 +1,111 @@
+.exp-entry {
+  padding: 24px 0;
+  border-radius: 12px;
+  transition: background-color 0.25s ease;
+}
+
+.exp-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  color: inherit;
+  text-align: left;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.exp-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text-faint);
+}
+
+.exp-company {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.exp-role-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.exp-role {
+  font-size: 18px;
+  font-weight: 600;
+  transition: color 0.25s ease;
+}
+
+.exp-toggle:hover .exp-role {
+  color: var(--accent);
+}
+
+.exp-location {
+  color: var(--text-faint);
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.exp-icon {
+  font-size: 22px;
+  line-height: 1;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.exp-highlights-wrap {
+  overflow: hidden;
+}
+
+.exp-highlights {
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.exp-highlights li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--text-dim);
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+.exp-highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.exp-stack {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.exp-stack-tag {
+  font-size: 12px;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 4px 11px;
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.exp-stack-tag:hover {
+  border-color: var(--accent);
+}

@@ -1,0 +1,116 @@
+.edu-item {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.edu-title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.edu-institution {
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+.edu-date {
+  color: var(--text-faint);
+  font-size: 13px;
+}
+
+/* Languages */
+.languages {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 620px;
+}
+
+.languages-heading {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+}
+
+.languages-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.lang-item {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.lang-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.lang-name {
+  font-size: 15px;
+  font-weight: 600;
+  font-family: var(--font-display);
+}
+
+.lang-meta {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  font-size: 12.5px;
+}
+
+.lang-level {
+  color: var(--text-faint);
+}
+
+.lang-value {
+  color: var(--accent);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.lang-track {
+  position: relative;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--border);
+  overflow: hidden;
+}
+
+.lang-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+  box-shadow: 0 0 14px -2px var(--glow);
+  position: relative;
+}
+
+.lang-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: langShine 3.2s ease-in-out infinite;
+}
+
+@keyframes langShine {
+  0%, 60% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-fill::after {
+    animation: none;
+  }
+}
